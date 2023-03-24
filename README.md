@@ -22,16 +22,13 @@ options:
 For example:
 ```
 python sunAndMoon.py --lat 63.79913 --lon -20.88370 --year 2023 --astart 140 --aend 269
-Sun rising from 2023-01-01 to 2023-01-19
-Moon setting from 2023-01-14 to 2023-02-06
-Moon setting from 2023-02-10 to 2023-03-08
-Sun setting from 2023-01-01 to 2023-03-18
-Moon rising from 2023-03-13 to 2023-04-06
-Moon rising from 2023-04-09 to 2023-06-09
-Moon rising from 2023-07-05 to 2023-07-06
-Moon setting from 2023-03-09 to 2023-07-09
-Moon setting from 2023-08-02 to 2023-08-05
-Moon setting from 2023-08-31 to 2023-09-02
-Sun rising from 2023-11-24 to 2023-12-31
-Sun setting from 2023-09-26 to 2023-12-31
+Sun rising at 2023-01-01 11:10:52.291667+00:00
+Sun setting at 2023-01-01 15:43:24.781064+00:00
+Sun rising at 2023-01-02 11:09:52.887888+00:00
+Sun setting at 2023-01-02 15:45:21.801333+00:00
+Sun rising at 2023-01-03 11:08:46.460986+00:00
+Sun setting at 2023-01-03 15:47:25.151194+00:00
+Sun rising at 2023-01-04 11:07:33.249902+00:00
+Sun setting at 2023-01-04 15:49:34.532214+00:00
+Sun rising at 2023-01-05 11:06:13.499515+00:00
 ```

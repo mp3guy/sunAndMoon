@@ -29,43 +29,32 @@ if __name__ == "__main__":
 
     l = LocationInfo('', '', tzlocal.get_localzone_name(), args.lat, args.lon)
 
-    firstSunRise = None
-    firstSunSet = None
-    firstMoonRise = None
-    firstMoonSet = None
+    def capture(body, eventAngle, event, time):
+        if eventAngle >= astart and eventAngle <= aend:
+            print(f"{body} {event} at {time}")
 
-    def capture(first, body, eventAngle, event):
-        if eventAngle >= astart and eventAngle <= aend and currDate + day != endDate:
-            if first is None:
-                first = currDate
-        elif first is not None:
-            print(f"{body} {event} from {first} to {currDate}")
-            first = None
-        return first
-
-    def moonCapture(eventFunc, first, eventName):
-        event = None
+    def moonCapture(eventFunc, eventName):
+        time = None
         try:
-            event = eventFunc(l.observer, currDate)
+            time = eventFunc(l.observer, currDate)
         except:
             pass
-        if event is not None:
-            first = capture(first, "Moon", moon.azimuth(l.observer, event), eventName)
-        return first
+        if time is not None:
+            capture("Moon", moon.azimuth(l.observer, time), eventName, time)
 
     while currDate < endDate:
         try:
             s = sun.sun(l.observer, date=currDate)
-            firstSunRise = capture(firstSunRise, "Sun", sun.azimuth(l.observer, dateandtime=s["sunrise"]), "rising")
-            firstSunSet = capture(firstSunSet, "Sun", sun.azimuth(l.observer, dateandtime=s["sunset"]), "setting")
+            capture("Sun", sun.azimuth(l.observer, dateandtime=s["sunrise"]), "rising", s["sunrise"])
+            capture("Sun", sun.azimuth(l.observer, dateandtime=s["sunset"]), "setting", s["sunset"])
         except:
             pass
 
         moonPhase = moon.phase(currDate)
 
         if moonPhase >= 14 and moonPhase < 21:
-            firstMoonRise = moonCapture(moon.moonrise, firstMoonRise, "rising")
-            firstMoonSet = moonCapture(moon.moonset, firstMoonSet, "setting")
+            moonCapture(moon.moonrise, "rising")
+            moonCapture(moon.moonset, "setting")
 
         currDate += day
 
