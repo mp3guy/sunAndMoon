@@ -1,7 +1,7 @@
 # sunAndMoon
-Script to calculate the date ranges you can catch a solar or lunar rise or set for a location and direction.
+Script to calculate the times you can catch a solar or lunar rise or set for a location and direction.
 
-Requires astral and tzlocal, both in pip. Find the parameters you need on e.g. suncalc.org
+Requires astral and tzlocal, both in pip. Find the parameters you need on e.g. suncalc.org.
 
 Usage:
 ```
