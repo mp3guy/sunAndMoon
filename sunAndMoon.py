@@ -1,4 +1,5 @@
 import argparse
+import locale
 import tzlocal
 import sys
 
@@ -6,6 +7,8 @@ from datetime import date, timedelta
 from astral import LocationInfo, sun, moon
 
 if __name__ == "__main__":
+    locale.setlocale(locale.LC_TIME, "")
+
     parser = argparse.ArgumentParser(description="Sun and Moon Set and Rise Calculator",
                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
@@ -31,7 +34,7 @@ if __name__ == "__main__":
 
     def capture(body, eventAngle, event, time):
         if eventAngle >= astart and eventAngle <= aend:
-            print(f"{body} {event} at {time}")
+            print(f"{body} {event} at {date.strftime(time, '%x %X')}")
 
     def moonCapture(eventFunc, eventName):
         time = None
