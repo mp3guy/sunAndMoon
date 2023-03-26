@@ -22,13 +22,10 @@ options:
 For example:
 ```
 python sunAndMoon.py --lat 63.79913 --lon -20.88370 --year 2023 --astart 140 --aend 269
-Sun rising at 2023-01-01 11:10:52.291667+00:00
-Sun setting at 2023-01-01 15:43:24.781064+00:00
-Sun rising at 2023-01-02 11:09:52.887888+00:00
-Sun setting at 2023-01-02 15:45:21.801333+00:00
-Sun rising at 2023-01-03 11:08:46.460986+00:00
-Sun setting at 2023-01-03 15:47:25.151194+00:00
-Sun rising at 2023-01-04 11:07:33.249902+00:00
-Sun setting at 2023-01-04 15:49:34.532214+00:00
-Sun rising at 2023-01-05 11:06:13.499515+00:00
+Sun rising at 01/01/23 11:10:52
+Sun setting at 01/01/23 15:43:24
+Sun rising at 02/01/23 11:09:52
+Sun setting at 02/01/23 15:45:21
+Sun rising at 03/01/23 11:08:46
+...
 ```
