@@ -20,8 +20,8 @@ if __name__ == "__main__":
     parser.add_argument("--aend", required=True, help="Azimuth end in degrees clockwise from North")
     args = parser.parse_args()
 
-    astart = int(args.astart)
-    aend = int(args.aend)
+    astart = float(args.astart)
+    aend = float(args.aend)
 
     if aend <= astart:
         print(f"astart >= aend")
